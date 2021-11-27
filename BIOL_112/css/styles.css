@@ -1,11 +1,25 @@
-.entry-title {
-  display: none;
+ul {
+  list-style-type: none;
+  margin: 10px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  
 }
 
 body {
   background: #242627;
   color: rgb(250, 242, 232);
-  margin: 20px;
+  margin: 25px;
+  height: 100%;
   }
 
 div {
@@ -39,4 +53,13 @@ button.btn.def:hover {
   background-color: #0b491b;
   transition: all ease-in-out 0s;
   color:rgb(250, 242, 232);
+}
+
+img {
+  padding-top: 10px;
+  padding: 10px;
+  max-width: 600px;
+  max-height: 600px;
+    width: 100%;
+    height: auto;
 }

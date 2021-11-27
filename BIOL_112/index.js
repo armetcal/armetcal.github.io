@@ -24,7 +24,7 @@ function do_onclick() {
     var random1 = Math.floor(Math.random() * n_codons.length);
     var num_codons = n_codons[random1];
     var description1 = 'A bacterial gene was sequenced and a small stretch of this double-stranded DNA is shown below. Only the <b>start codon (AUG), '
-    var description2 = ' amino acid(s), and the stop codon (UAA, UAG, or UGA)</b> of the protein are represented by this DNA sequence (i.e. the DNA downstream of the promoter, after the +1 site and before the terminator).'
+    var description2 = ' amino acid(s), and the stop codon (UAA, UAG, or UGA)</b> of the protein are represented by this DNA sequence (i.e. the DNA downstream of the promoter, after the +1 site and before the terminator).<br/><br/>'
     document.getElementById("num_codons").innerHTML = description1 + num_codons.toString() + description2;
 
     // Variables

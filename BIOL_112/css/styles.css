@@ -1,12 +1,42 @@
-.addMore{
-    border: none;
-    width: 32px;
-    height: 32px;
-    background-color: #eee;
-    transition: all ease-in-out 0.2s;
-    cursor: pointer;
+.entry-title {
+  display: none;
+}
+
+body {
+  background: #242627;
+  color: rgb(250, 242, 232);
+  margin: 20px;
   }
-  .addMore:hover{
-    border: 1px solid #888;
-    background-color: #ddd;
-  }
+
+div {
+  word-wrap: normal;
+  width: 600px;
+}
+
+b {
+  color: #1a9e3b;
+}
+
+mark {
+  background-color: #1a9e3b;
+  padding: 0px;
+}
+
+button.btn.def {
+  background-color: #0b491b;
+  border-color: #0b491b;
+  box-shadow: 2px 2px #000000;
+  color:rgb(250, 242, 232);
+  padding: 3px;
+  margin: 3px;
+  text-align: center;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+  display: inline-block;
+}
+button.btn.def:hover {
+  border-color: #06270e;
+  background-color: #0b491b;
+  transition: all ease-in-out 0s;
+  color:rgb(250, 242, 232);
+}

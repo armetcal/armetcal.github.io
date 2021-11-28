@@ -76,7 +76,7 @@ body {
 
 div {
   word-wrap: normal;
-  max-width: 600px;
+  max-width: 620px;
 }
 
 b {
@@ -134,7 +134,7 @@ img {
     height: auto;
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1290px) {
   #gen_codons {
       display: none;
   }

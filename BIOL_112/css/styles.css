@@ -15,10 +15,36 @@ li a {
   
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 5%;
+    background-color: #0b491b;
+    border-radius: 8px;
+    box-shadow: 2px 2px #000000;
+}
+.logo{
+  font-weight: bold;
+}
+header a{
+  text-decoration: none !important;
+  color: #fff;
+  font-size: 17px;
+}
+
+header a:hover{
+  color: #1a9e3b;
+}
+
+.content{
+  padding: 2% 5%;
+
+}
+
 body {
   background: #242627;
   color: rgb(250, 242, 232);
-  margin: 25px;
   height: 100%;
   }
 
@@ -35,7 +61,15 @@ mark {
   background-color: #1a9e3b;
   padding: 0px;
 }
+.btn{
+  padding: 1rem !important;
+  border-radius: 20px;
+}
 
+.btn-refresh{
+  background-color: #1a9e3b !important;
+  font-size: 2.5rem;
+}
 button.btn.def {
   background-color: #0b491b;
   border-color: #0b491b;
@@ -48,6 +82,12 @@ button.btn.def {
   cursor: pointer;
   display: inline-block;
 }
+.ans{
+  margin-left: 60px !important;
+  font-size: large;
+  color: #1a9e3b;
+}
+
 button.btn.def:hover {
   border-color: #06270e;
   background-color: #0b491b;

@@ -47,6 +47,7 @@ header {
 }
 .logo{
   font-weight: bold;
+  font-size: 15pt;
 }
 header a{
   text-decoration: none !important;
@@ -75,15 +76,16 @@ body {
 
 div {
   word-wrap: normal;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 b {
-  color: #1a9e3b;
+  color: #1fce4b;
 }
 
 mark {
-  background-color: #1a9e3b;
+  background-color: #27f85c;
+  font-weight: bold;
   padding: 0px;
 }
 .btn{
@@ -93,24 +95,21 @@ mark {
 
 .btn-refresh{
   background-color: #1a9e3b !important;
-  font-size: 2.5rem;
+  font-size: 15pt;
 }
 button.btn.def {
   background-color: #0b491b;
   border-color: #0b491b;
   box-shadow: 2px 2px #000000;
+  font-size: 12pt;
   color:rgb(250, 242, 232);
-  padding: 3px;
-  margin: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: 3px;
   text-align: center;
   transition: all ease-in-out 0.5s;
   cursor: pointer;
   display: inline-block;
-}
-.ans{
-  margin-left: 65px !important;
-  font-size: large;
-  color: #1a9e3b;
 }
 
 button.btn.def:hover {
@@ -118,6 +117,12 @@ button.btn.def:hover {
   background-color: #0b491b;
   transition: all ease-in-out 0s;
   color:rgb(250, 242, 232);
+}
+
+.ans{
+  margin-left: 65px !important;
+  font-size: large;
+  color: #27f85c;
 }
 
 img {
@@ -129,7 +134,7 @@ img {
     height: auto;
 }
 
-@media only screen and (max-width: 1026px) {
+@media only screen and (max-width: 1250px) {
   #gen_codons {
       display: none;
   }

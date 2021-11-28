@@ -12,7 +12,6 @@ var button1_value = 0;
 var button2_value = 0;
 var button3_value = 0;
 var button4_value = 0;
-var last_answer = 0;
 var last_hint = 0;
 const total_length = 35;
 var clicked = 0;
@@ -33,7 +32,6 @@ function do_onclick() {
     button3_value = 0;
     button4_value = 0;
     clicked = 0;
-    last_answer = 0;
     last_hint = 0;
 
     // Codon Table
@@ -264,18 +262,26 @@ function do_onclick() {
 }
 
 function button_show_onclick(){
-    if(clicked == 0 ) {
+    if(clicked == 0 || button1_value == 0 && button2_value == 0 && button3_value == 0 && button4_value == 0) {
       document.getElementById("answer1").innerHTML = num_start;
       document.getElementById("answer2").innerHTML = template_strand;
       document.getElementById("answer3").innerHTML = mrna_sequence;
       document.getElementById("answer4").innerHTML = pep_out;
       clicked = 1;
+      button1_value = 1;
+      button2_value = 1;
+      button3_value = 1;
+      button4_value = 1;
     } else {
       document.getElementById("answer1").innerHTML = "";
       document.getElementById("answer2").innerHTML = "";
       document.getElementById("answer3").innerHTML = "";
       document.getElementById("answer4").innerHTML = "";
       clicked = 0;
+      button1_value = 0;
+      button2_value = 0;
+      button3_value = 0;
+      button4_value = 0;
     }
 }
 function button1_onclick(){

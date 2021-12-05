@@ -167,8 +167,9 @@ function do_onclick() {
                 var complete_string = complete_string.join('');
                 var changeable = changeable.filter(b => b != temp+2);
             } else {
-                var e = new Error('Error - please generate new problem');
-                throw e;
+                document.getElementById("num_codons").innerHTML = "<h3>Error - please generate a new problem.</h3>";
+                document.getElementById("output_top").innerHTML = '';
+                document.getElementById("output_bottom").innerHTML = '';
             }
 
         }

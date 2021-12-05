@@ -200,7 +200,9 @@ function do_onclick() {
                 var complete_string = complete_string.join('');
                 var changeable = changeable.filter(b => b != temp+2);
             } else {
-                document.getElementById("num_codons").innerHTML = "Error - please generate new problem."
+                document.getElementById("num_codons").innerHTML = "<h3>Error - please generate a new problem.</h3>";
+                document.getElementById("output_top").innerHTML = '';
+                document.getElementById("output_bottom").innerHTML = '';
             }
 
         }
@@ -270,29 +272,18 @@ function do_onclick() {
         var temp_translate = temp_translate.split('');
         var temp_translate = temp_translate.reverse();
         var temp_translate = temp_translate.join('');
-        console.log(temp_translate)
-        console.log(protein)
-        console.log(temp_translate.slice(0,3))
     } else if(template_strand == 'Bottom'){
         var temp = '' + output_top;
         var temp_translate = temp.slice(extra_bases_1+2, 39-extra_bases_2-5);
-        console.log(temp_translate)
-        console.log(protein)
-        console.log(temp_translate.slice(0,3))
     }
 
     for(var i = 3; i<temp_translate.length; i=i+3){
-        console.log(i);
         var temp = temp_translate.slice(i,i+3);
-        console.log(temp);
         var temp2 = getKeyByValue(ct,temp);
-        console.log(temp2);
         pep.push(temp2);
     }
     if(pep.includes('Stp')){
-        document.getElementById("num_codons").innerHTML = "<h3>Error - please generate a new problem.</h3>";
-        document.getElementById("output_top").innerHTML = '';
-    document.getElementById("output_bottom").innerHTML = '';
+        do_onclick()
     } else {
         pep_out = 'N-' + pep.join('-') + '-C';
     }

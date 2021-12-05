@@ -30,7 +30,7 @@ function do_onclick() {
     button4_value = 0;
 
     // Number of codons
-    var n_codons = [0,1,2,2,3,3,4,4];
+    var n_codons = [0,1,2,2,2,3,3,3,4,4,4];
     var random1 = Math.floor(Math.random() * n_codons.length);
     var num_codons = n_codons[random1];
     var description1 = 'A bacterial gene was sequenced and a small stretch of this double-stranded DNA is shown below. Only the <b>start codon (AUG), '
@@ -104,7 +104,6 @@ function do_onclick() {
         post.push(bases[Math.floor(Math.random() * 4)]);
     }
     var complete_string = pre.join('') + final_string + post.join('');
-
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     // Add wrong start codons
@@ -201,8 +200,7 @@ function do_onclick() {
                 var complete_string = complete_string.join('');
                 var changeable = changeable.filter(b => b != temp+2);
             } else {
-                var e = new Error('Error - please generate new problem');
-                throw e;
+                document.getElementById("num_codons").innerHTML = "Error - please generate new problem."
             }
 
         }
@@ -265,12 +263,40 @@ function do_onclick() {
     function getKeyByValue(object, value) {
         return Object.keys(object).find(key => object[key].includes(value));
     }
-    for(var i = 0; i<protein.length; i++){
-        var temp = protein[i];
+    
+    if(template_strand == 'Top'){
+        var temp = '' + output_bottom;
+        var temp_translate = temp.slice(extra_bases_2+5, 39-extra_bases_1-2);
+        var temp_translate = temp_translate.split('');
+        var temp_translate = temp_translate.reverse();
+        var temp_translate = temp_translate.join('');
+        console.log(temp_translate)
+        console.log(protein)
+        console.log(temp_translate.slice(0,3))
+    } else if(template_strand == 'Bottom'){
+        var temp = '' + output_top;
+        var temp_translate = temp.slice(extra_bases_1+2, 39-extra_bases_2-5);
+        console.log(temp_translate)
+        console.log(protein)
+        console.log(temp_translate.slice(0,3))
+    }
+
+    for(var i = 3; i<temp_translate.length; i=i+3){
+        console.log(i);
+        var temp = temp_translate.slice(i,i+3);
+        console.log(temp);
         var temp2 = getKeyByValue(ct,temp);
+        console.log(temp2);
         pep.push(temp2);
     }
-    pep_out = 'N-' + pep.join('-') + '-C';
+    if(pep.includes('Stp')){
+        document.getElementById("num_codons").innerHTML = "<h3>Error - please generate a new problem.</h3>";
+        document.getElementById("output_top").innerHTML = '';
+    document.getElementById("output_bottom").innerHTML = '';
+    } else {
+        pep_out = 'N-' + pep.join('-') + '-C';
+    }
+    
 }
 
 function button_show_onclick(){

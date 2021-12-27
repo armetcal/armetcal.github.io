@@ -17,15 +17,7 @@ ui <- fluidPage(
     sidebarLayout(
         
         sidebarPanel(
-            # Sidebar to specify language
-            selectInput("lang","Type of English:",
-                        c("English" = 'en',
-                          "English (No Swears)" = 'enns',
-                          "English (American)" = 'ae',
-                          "English (American, No Swears)" = 'aens')),
-            # Number of words
-            textInput("words", "Most Common Words (Max 10000)", 
-                      value = "1000", placeholder = "1000"),
+        
             # If input is word doc
             fileInput("file", "Upload Word Document (Optional, .docx only)",
                       multiple = FALSE,

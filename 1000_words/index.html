@@ -1,99 +1,60 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>1000 Words</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="index.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-   <header>
-        <a  class="logo" href = "../index.html">Science Tools</a>
+    <header>
+        <a class="logo" href="../index.html">Science Tools</a>
         <nav class="nav__links">
             <ul>
-                <li><a href = "../BIOL_112/html/codon_chart.html">Codon Table</a></li>
-                <li><a href = "../BIOL_112/html/tutorial.html">Tutorial</a></li>
+                <li><a href="word_lists/index.html">Word Lists</a></li>
             </ul>
         </nav>
 
-   </header>
-    <div class="content", style='float:left;'>
+    </header>
+
+    <div class="content" , style='float:left;'>
+        <label for="lang">
+            <h4>Type of English:</h4>
+        </label>
+        <select name="lang" id="lang" style="color:black;">
+            <option value="en">English</option>
+            <option value="enns">English (No Swears)</option>
+            <option value="ae">English (American)</option>
+            <option value="aens">English (American, No Swears)</option>
+        </select>
+        <label for="numwords">
+            <h4>Most Common Words (Max 10,000):</h4>
+        </label>
+        <input type="number" name="numwords" min="0" max="10000" value="1000" style="color:black;"></input>
         <p>
-            <label for="textinput"><h3>Paste text here:</h3></label>
-            <textarea name="textinput" cols="100" rows="5"></textarea>
+            <label for="textinput">
+                <h3>Paste text here:</h3>
+            </label>
+            <textarea name="textinput" style="color:black;" cols="100" rows="5"></textarea>
         </p>
-        <p>
-            <div>
-                <h4><span id="num_codons"></span></h4>
-                <script>
-                    document.getElementById('num_codons').innerHTML = '<h3>Press the Refresh icon to get started!</h3>';
-                </script>
-                <p>
-                    <h4><span id="output_top"></span></h4>
-                    <h4><span id="output_bottom"></span></h4>
-                    <br/>
-                </p>
-            </div>
-        </p>
-        <p>
-            <h3 style="display:inline">Questions: </h3>
-            <button class="btn def btn-default" id="button_show" onclick="button_show_onclick()">
-                Show/Hide All
-            </button>
-            <br/><br/>
-            <div>
-                <button class="btn def btn-toggle" title="Show/hide answer" id="button1" onclick="button1_onclick()">
-                    <span class="fa fa-eye"></span>
-                    <span class="fa fa-eye-slash"></span>
-                </button>
-                <h4 style="display:inline">1. How many potential start codons are there?</h4><br/>
-                <span class="ans" id="answer1"></span>
-                <br/><br/>
-                <button class="btn def btn-toggle" title="Show/hide answer" id="button2" onclick="button2_onclick()">
-                    <span class="fa fa-eye"></span>
-                    <span class="fa fa-eye-slash"></span>
-                </button>
-                <h4 style="display:inline">2. Which strand is the TEMPLATE strand?</h4><br />
-                <span class="ans" id="answer2"></span>
-                <br /><br/>
-                <button class="btn def btn-toggle" title="Show/hide answer" id="button3" onclick="button3_onclick()">
-                    <span class="fa fa-eye"></span>
-                    <span class="fa fa-eye-slash"></span>
-                </button>
-                <h4 style="display:inline">3. What is the corresponding mRNA sequence?</h4><br />
-                <span class="ans" style="margin-left: 0px !important;" id="answer3"></span>
-                <br /><br/>
-                <button class="btn def btn-toggle" title="Show/hide answer" id="button4" onclick="button4_onclick()">
-                    <span class="fa fa-eye"></span>
-                    <span class="fa fa-eye-slash"></span>
-                </button>
-                <h4 style="display:inline">4. What is the corresponding peptide sequence?</h4><br />
-                <span class="ans" id="answer4"></span>
-            </div>
-        </p>
-    </div>
-    <div style='float:right; margin-right: 2.5%; margin-top: 2.5%;'>
-        <img id="gen_codons" src="html/codonchart.png" title="Overview of Transcription and Translation"></img>
-    </div>        
 </body>
+
 <footer class="site-footer">
     <div style='clear: both; max-width: 10000px;'>
         <hr>
-        <h4><center>Input and suggestions are always welcome!</center></h4>
+        <h4>
+            <center>Input and suggestions are always welcome!</center>
+        </h4>
         <p>
             <center>
-                Developed by Avril Metcalfe-Roach for BIOL 112 at the University of British Columbia.
-            </center>
-        </p>
-        <p>
-            <center>
-                Would problem generators be useful in other courses? Let me know!
+                Developed by Avril Metcalfe-Roach.
             </center>
         </p>
         <p>
@@ -108,4 +69,5 @@
         </p>
     </div>
 </footer>
+
 </html>

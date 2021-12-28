@@ -54,7 +54,7 @@ function do_onclick() {
             i2 = i2.join(' ');
             i1[y] = i2
         }
-        i_out = i1.join("<br>");
+        i_out = i1.join("</br>");
         
         var ratio = 100*common/(common+uncommon);
         var ratio = ratio.toFixed(1);

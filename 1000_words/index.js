@@ -8,16 +8,13 @@ var enns = enns_list.split("<BR>");
 
 // Select & trim list of interest
 function do_onclick() {
-    console.log('start');
     var common = 0;
     var uncommon = 0;
     var i = document.getElementById('textinput').value
     if (i == "") {
         // Do nothing (no text inputted)
-    console.log('nothing');
     } else {
         // Select list
-    console.log('entry');
         var L = document.getElementById('lang').value;
         if(L == 'en'){
             var words = en;
@@ -50,8 +47,6 @@ function do_onclick() {
             
         }
         i_out = i2.join(' ');
-        console.log(i2);
-        console.log(i_out);
         var ratio = 100*common/(common+uncommon);
         var ratio = ratio.toFixed(1);
         document.getElementById("com").innerHTML = "<strong>" + common + "</strong>";

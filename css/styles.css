@@ -45,10 +45,16 @@ header {
     border-radius: 0px;
     box-shadow: 2px 2px #000000;
 }
+
 .logo{
   font-weight: bold;
   font-size: 15pt;
 }
+
+.logo2{
+  font-size: 14pt;
+}
+
 header a{
   text-decoration: none !important;
   color: #fff;

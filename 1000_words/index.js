@@ -26,27 +26,37 @@ function do_onclick() {
         var words_trim = words.slice(0,Num);
 
         // Format input text
-        var i2 = i.split(' ');
-        for(var x = 0; x<i2.length; x++){
-            ii = i2[x];
-            var ii2 = ii.toLowerCase();
-            var ii3 = ii2.replace(/[.,?\/#!$%\^&\*;:{}=\-_`~()><"\n\r]/g,"");
-            var ii3 = ii3.replace(/[0-9]/g,"");
-            var ii3 = ii3.replace(/\\/g,"");
-            var filterout = [" ", ""];
-            if(filterout.includes(ii3)){
-                // Do nothing
-            } else {
-                if(words_trim.includes(ii3)){
-                    i2[x] = "<strong><mark>" + i2[x] + "</strong></mark>"
-                    var common = common + 1
+        var i0 = i.replace(/[\t]/g," ");
+        var i1 = i0.split(/\r?\n/);
+        for(var y = 0; y<i1.length; y++){
+            i11 = i1[y];
+            var i2 = i11.split(' ');
+            for(var x = 0; x<i2.length; x++){
+                ii = i2[x];
+                var ii2 = ii.toLowerCase();
+                var ii3 = ii2.replace(/[.,?\/#!$%\^&\*;:{}=\-_`~()><"]/g," ");
+                var ii3 = ii3.replace(/[0-9]/g," ");
+                var ii3 = ii3.replace(/\\/g," ");
+                var ii3 = ii3.replace(' ',"");
+                var filterout = [" ", ""];
+                if(filterout.includes(ii3)){
+                    // Do nothing
                 } else {
-                    var uncommon = uncommon + 1
+                    if(words_trim.includes(ii3)){
+                        i2[x] = "<strong><mark>" + i2[x] + "</strong></mark>"
+                        var common = common + 1
+                    } else {
+                        var uncommon = uncommon + 1
+                    }
                 }
+                
             }
-            
+            i2 = i2.join(' ');
+            i1[y] = i2
         }
-        i_out = i2.join(' ');
+        i_out = i1.join("<br>");
+        console.log(i_out);
+        
         var ratio = 100*common/(common+uncommon);
         var ratio = ratio.toFixed(1);
         document.getElementById("com").innerHTML = "<strong>" + common + "</strong>";

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MICB 353 Dilution Practice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">MICB 353 Dilution Practice</a>
+        <nav class="nav__links">
+            <ul>
+                <li><a href="html/codon_chart.html">Codon Table</a></li>
+                <li><a href="html/tutorial.html">Tutorial</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="content">
+        <p style='display:inline;'>
+            <button style="display:inline;" class="btn def btn-refresh" title="Generate new problem" id="do"
+                onclick="do_onclick()">
+                <span class="fa fa-refresh"></span>
+            </button>
+        <h4 style="display:inline;padding-left: 10px;">Generate new problem</h4>
+        </p>
+        <p>
+        <div>
+            <h4><span id="dilution_description"></span></h4>
+            <script>
+                var description1 = 'You are preparing a <strong><mark>';
+                var description2 = ' serial dilution</strong></mark> of <em>Akkermansia muciniphila</em> in order to determine how many live bacteria are present in the sample. You prepare <strong><mark>';
+                var description3 = ' dilution(s)</strong></mark> and seed <strong><mark>';
+                document.getElementById("dilution_description").innerHTML = description1 + '(  )' + description2 + '(  )' + description3 + '(  )' + ' ml</strong></mark> onto an agar plate.';
+            </script>
+        </div>
+        </p>
+        </br>
+        <p>
+        <div>
+            <h4 style="display:inline">1. What is the final dilution of the sample?</h4><br />
+            <span class="ans" id="answer1"></span>
+        </div>
+        </p>
+        <p>
+        <div>
+            <h4 style="display:inline">2. What is the final <strong>plated</strong> dilution of the sample?</h4><br />
+            <span class="ans" id="answer2"></span>
+        </div>
+        </p>
+        <p>
+        <div>
+            <h4 style="display:inline"><span id="cfu_description"></span></h4><br />
+            <script>
+                document.getElementById('cfu_description').innerHTML = '3. After 3 days of anaerobic incubation, your plate has <strong><mark>(  )</strong></mark> colony forming units (CFUs). What was the CFU/ml of the original sample?';
+            </script>
+            <span class="ans" id="answer3"></span>
+        </div>
+        </p>
+        <p>
+            <div>
+                <h4 style="display:inline">4. Based on the CFU count, do you think that the CFU/ml calculation is reasonably accurate? Assume that all dilutions were 100% accurate.</h4><br />
+                <h4 style="display:inline">If not, would better results be obtained by performing one MORE or one LESS serial dilution?</h4><br />
+                <span class="ans" id="answer4"></span>
+            </div>
+        </p>
+    </div>
+</body>
+<footer class="site-footer">
+    <div style='clear: both; max-width: 10000px;'>
+        <hr>
+        <h4>
+            <center>Input and suggestions are always welcome!</center>
+        </h4>
+        <p>
+            <center>
+                Developed by Avril Metcalfe-Roach for MICB 353 at the University of British Columbia.
+            </center>
+        </p>
+        <p>
+            <center>
+                Would problem generators be useful in other courses? Let me know!
+            </center>
+        </p>
+        <p>
+            <center>
+                Contact email: armetcal@msl.ubc.ca
+            </center>
+        </p>
+        <p>
+            <center>
+                Updated: 2 January 2022
+            </center>
+        </p>
+    </div>
+</footer>
+
+</html>

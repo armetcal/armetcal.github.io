@@ -46,6 +46,13 @@ header {
     box-shadow: 2px 2px #000000;
 }
 
+.hide {
+  display: none !important
+}
+.show {
+  display: inline !important
+}
+
 .logo{
   font-weight: bold;
   font-size: 15pt;

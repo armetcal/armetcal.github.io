@@ -6,6 +6,7 @@ var split = 0;
 function do_onclick() {
 
     document.getElementById('q4a').value = "none";
+    document.getElementById('visualizer').classList = "hide";
 
     // Set up question parameters
     var dilution = ['1/2', '1/4', '1/5', '1/10'];
@@ -78,10 +79,11 @@ function display_4b() {
         document.getElementById("answer5").innerHTML = new_cfu.toString();
     }
     number_line();
+    document.getElementById('visualizer').classList = "show";
 }
 
 function number_line() {
-
+    // http://microbiologynetwork.com/counting-colonies.asp
     // Breed and Dotterrer chose their countable plates from triplicate platings of each dilution,
     // requiring acceptable plates to be within 20% of the average. 
     // On this analysis, plates with more than 400 CFU were unsatisfactory, as were those of less than 30 CFU,

@@ -10,6 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="index.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -60,17 +61,37 @@
         <div>
             <h4 style="display:inline"><span id="cfu_description"></span></h4><br />
             <script>
-                document.getElementById('cfu_description').innerHTML = '3. After 3 days of anaerobic incubation, your plate has <strong><mark>(  )</strong></mark> colony forming units (CFUs). What was the CFU/ml of the original sample?';
+                document.getElementById('cfu_description').innerHTML = '3. After 3 days of anaerobic incubation, your plate has <strong><mark>(  )</strong></mark> colony forming units (CFUs).';
             </script>
-            <span class="ans" id="answer3"></span>
+            <h4 style="margin-left:5%;">3a. What was the CFU/ml of the FINAL DILUTION?</h4>
+            <span class="ans" id="answer3a"></span>
+            <h4 style="margin-left:5%;">3b. What was the CFU/ml of the ORIGINAL SAMPLE?</h4>
+            <span class="ans" id="answer3b"></span>
         </div>
         </p>
         <p>
-            <div>
-                <h4 style="display:inline">4. Based on the CFU count, do you think that the CFU/ml calculation is reasonably accurate? Assume that all dilutions were 100% accurate.</h4><br />
-                <h4 style="display:inline">If not, would better results be obtained by performing one MORE or one LESS serial dilution?</h4><br />
-                <span class="ans" id="answer4"></span>
-            </div>
+        <div>
+            <p>
+            <h4 style="display:inline">4a. Based on the provided CFU count, do you think that the above CFU/ml
+                calculation is reasonably accurate? <em>Assume that all dilutions were 100% accurate.</em></h4><br />
+            <br>
+            <h4 style="display:inline">If not, would better results be obtained by performing one MORE or one LESS
+                serial dilution?</h4>
+            </p>
+            <p>
+                <select name="q4a" id="q4a" style="color:black;margin-bottom: 5pt;" onchange="display_4b()">
+                    <option value="none"></option>
+                    <option value="acc">Reasonably accurate</option>
+                    <option value="more">One more dilution</option>
+                    <option value="less">One less dilution</option>
+                </select>
+            </p>
+            <h4 style="margin-left:5%;"><span id="quest_4b"></span></h4>
+            <span class="ans" id="answer4"></span>
+            <h4 style="margin-left:5%;"><span id="quest_4c"></span></h4>
+            <span class="ans" id="answer5"></span>
+        </div>
+        <div id="visualizer" style="width:100%;"></div>
         </p>
     </div>
 </body>

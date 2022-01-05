@@ -114,11 +114,12 @@ button.btn.def {
   background-color: #0b491b;
   border-color: #0b491b;
   box-shadow: 2px 2px #000000;
-  font-size: 12pt;
+  font-size: 10pt;
   color:rgb(250, 242, 232);
   padding-left: 3px;
   padding-right: 3px;
   margin-left: 3px;
+  margin-right: 3px;
   text-align: center;
   transition: all ease-in-out 0.5s;
   cursor: pointer;
@@ -134,6 +135,11 @@ button.btn.def:hover {
 
 .ans{
   margin-left: 65px !important;
+  font-size: large;
+  color: #27f85c;
+}
+.ans2{
+  margin-left: 130px !important;
   font-size: large;
   color: #27f85c;
 }

@@ -25,35 +25,45 @@
         </nav>
 
     </header>
-    <div class="content">
+    <div class="content" style="max-width: 750px;">
         <p style='display:inline;'>
             <button style="display:inline;" class="btn def btn-refresh" title="Generate new problem" id="do"
                 onclick="do_onclick()">
                 <span class="fa fa-refresh"></span>
             </button>
-        <h4 style="display:inline;padding-left: 10px;">Generate new problem</h4>
+        <h4 style="display:inline;padding-left: 10px;">Generate New Problem</h4>
         </p>
         <p>
         <div>
             <h4><span id="dilution_description"></span></h4>
             <script>
-                var description1 = 'You are preparing a <strong><mark>';
-                var description2 = ' serial dilution</strong></mark> of <em>Akkermansia muciniphila</em> in order to determine how many live bacteria are present in the sample. You prepare <strong><mark>';
-                var description3 = ' dilution(s)</strong></mark> and seed <strong><mark>';
-                document.getElementById("dilution_description").innerHTML = description1 + '(  )' + description2 + '(  )' + description3 + '(  )' + ' ml</strong></mark> onto an agar plate.';
+                var description1 = 'You are preparing a <b>';
+                var description2 = ' serial dilution</b> of <em>Akkermansia muciniphila</em> in order to determine how many live bacteria are present in the sample. You prepare <b>';
+                var description3 = ' dilution(s)</b> and seed <b>';
+                document.getElementById("dilution_description").innerHTML = description1 + '(  )' + description2 + '(  )' + description3 + '(  )' + ' ml</b> onto an agar plate.';
             </script>
         </div>
         </p>
         </br>
         <p>
         <div>
-            <h4 style="display:inline">1. What is the final dilution of the sample?</h4><br />
+            <button class="btn def btn-toggle" title="Show/hide answer" id="button1" onclick="button1_onclick()">
+                <span class="fa fa-eye"></span>
+                <span class="fa fa-eye-slash"></span>
+            </button>
+            <h4 style="display:inline-block">1. What is the final dilution of the sample?</h4>
+            <br />
             <span class="ans" id="answer1"></span>
         </div>
         </p>
         <p>
         <div>
-            <h4 style="display:inline">2. What is the final <strong>plated</strong> dilution of the sample?</h4><br />
+            <button class="btn def btn-toggle" title="Show/hide answer" id="button2" onclick="button2_onclick()">
+                <span class="fa fa-eye"></span>
+                <span class="fa fa-eye-slash"></span>
+            </button>
+            <h4 style="display:inline">2. What is the final PLATED dilution of the sample?</h4>
+            <br />
             <span class="ans" id="answer2"></span>
         </div>
         </p>
@@ -61,12 +71,32 @@
         <div>
             <h4 style="display:inline"><span id="cfu_description"></span></h4><br />
             <script>
-                document.getElementById('cfu_description').innerHTML = '3. After 3 days of anaerobic incubation, your plate has <strong><mark>(  )</strong></mark> colony forming units (CFUs).';
+                document.getElementById('cfu_description').innerHTML = '3. After 3 days of anaerobic incubation, your plate has <b>(  )</b> colony forming units (CFUs).';
             </script>
-            <h4 style="margin-left:5%;">3a. What was the CFU/ml of the FINAL DILUTION?</h4>
-            <span class="ans" id="answer3a"></span>
-            <h4 style="margin-left:5%;">3b. What was the CFU/ml of the ORIGINAL SAMPLE?</h4>
-            <span class="ans" id="answer3b"></span>
+            <p>
+            <div>
+                <button style="margin-left:5%;" class="btn def btn-toggle" title="Show/hide answer" id="button3a"
+                    onclick="button3a_onclick()">
+                    <span class="fa fa-eye"></span>
+                    <span class="fa fa-eye-slash"></span>
+                </button>
+                <h4 style="display:inline">3a. What was the CFU/ml of the FINAL DILUTION?</h4>
+                <br>
+                <span class="ans2" id="answer3a"></span>
+            </div>
+            </p>
+            <p>
+            <div>
+                <button style="margin-left:5%;" class="btn def btn-toggle" title="Show/hide answer" id="button3b"
+                    onclick="button3b_onclick()">
+                    <span class="fa fa-eye"></span>
+                    <span class="fa fa-eye-slash"></span>
+                </button>
+                <h4 style="margin-left:1%;display:inline;">3b. What was the CFU/ml of the ORIGINAL SAMPLE?</h4>
+                <br>
+                <span class="ans2" id="answer3b"></span>
+            </div>
+            </p>
         </div>
         </p>
         <p>
@@ -86,11 +116,33 @@
                     <option value="less">One less dilution</option>
                 </select>
             </p>
-            <h4 style="margin-left:5%;"><span id="quest_4b"></span></h4>
-            <span class="ans" id="answer4"></span>
-            <h4 style="margin-left:5%;"><span id="quest_4c"></span></h4>
-            <span class="ans" id="answer5"></span>
+            <div id='question_4' style="display: none;">
+                <button style="margin-left:5%;" class="btn def btn-toggle" title="Show/hide answer" id="button4b"
+                    onclick="button4b_onclick()">
+                    <span class="fa fa-eye"></span>
+                    <span class="fa fa-eye-slash"></span>
+                </button>
+                <h4 style="margin-left:1%;display:inline;" id="quest_4b">4b. What is the expected CFU/ml of this serial
+                    dilution?
+                    <em>Round to the nearest integer.</em>
+                    <br>
+                </h4>
+                <span class="ans2" id="answer4b"></span>
+                <br>
+                <button style="margin-left:5%;" class="btn def btn-toggle" title="Show/hide answer" id="button4c"
+                    onclick="button4c_onclick()">
+                    <span class="fa fa-eye"></span>
+                    <span class="fa fa-eye-slash"></span>
+                </button>
+                <h4 style="margin-left:1%;display:inline;text-align: left;" id="quest_4c">4c. What is the expected CFU
+                    of this serial dilution after plating? <em>Round to the nearest integer and assume that the same
+                        volume is seeded.</em>
+                    <br>
+                </h4>
+                <span class="ans2" id="answer4c"></span>
+            </div>
         </div>
+        <br>
         <div id="visualizer" style="width:100%;"></div>
         </p>
     </div>
@@ -118,7 +170,7 @@
         </p>
         <p>
             <center>
-                Updated: 2 January 2022
+                Updated: 6 January 2022
             </center>
         </p>
     </div>

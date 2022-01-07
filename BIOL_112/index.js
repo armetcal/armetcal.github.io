@@ -23,11 +23,6 @@ function do_onclick() {
     document.getElementById("answer2").innerHTML = "";
     document.getElementById("answer3").innerHTML = "";
     document.getElementById("answer4").innerHTML = "";
-    clicked = 0;
-    button1_value = 0;
-    button2_value = 0;
-    button3_value = 0;
-    button4_value = 0;
 
     // Number of codons
     var n_codons = [0,1,2,2,2,3,3,3,4,4,4];

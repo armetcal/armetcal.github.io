@@ -9,6 +9,7 @@ var answer_3b;
 var answer_4b;
 var answer_4c;
 
+var clicked = 0;
 var button1_value = 0;
 var button2_value = 0;
 var button3a_value = 0;
@@ -17,6 +18,7 @@ var button4b_value = 0;
 var button4c_value = 0;
 document.getElementById('button4b').style.display = "none";
 
+// Main problems
 function do_onclick() {
 
     document.getElementById('q4a').value = "none";
@@ -67,6 +69,7 @@ function do_onclick() {
     document.getElementById("answer4c").innerHTML = "";
     document.getElementById('button4b').style.display = "none";
     document.getElementById('button4c').style.display = "none";
+    clicked = 0;
     button1_value = 0;
     button2_value = 0;
     button3a_value = 0;
@@ -114,6 +117,7 @@ function display_4b() {
     document.getElementById('visualizer').classList = "show";
 }
 
+// Create number line for CFU counts
 function number_line() {
     // http://microbiologynetwork.com/counting-colonies.asp
     // Breed and Dotterrer chose their countable plates from triplicate platings of each dilution,
@@ -235,57 +239,93 @@ function number_line() {
     Plotly.newPlot('visualizer', data, layout, { scrollZoom: true });
 }
 
-function button1_onclick(){
-    if(button1_value == 0 ) {
-      document.getElementById("answer1").innerHTML = answer_1;
-      button1_value = 1;
+// Question/Answer Buttons
+function button_show_onclick() {
+    if (clicked == 0 || button1_value == 0 && button2_value == 0 && button3a_value == 0 && button3b_value == 0 && button4b_value == 0 && button4c_value == 0) {
+        document.getElementById("answer1").innerHTML = answer_1;
+        document.getElementById("answer2").innerHTML = answer_2;
+        document.getElementById("answer3a").innerHTML = answer_3a;
+        document.getElementById("answer3b").innerHTML = answer_3b;
+        clicked = 1;
+        button1_value = 1;
+        button2_value = 1;
+        button3a_value = 1;
+        button3b_value = 1;
+        // Change Q4 if applicable
+        var x = document.getElementById('q4a').value;
+        if (x == 'more' || x == 'less') {
+            document.getElementById("answer4b").innerHTML = answer_4b;
+            document.getElementById("answer4c").innerHTML = answer_4c;
+            button4b_value = 1;
+            button4c_value = 1;
+        }
     } else {
-      document.getElementById("answer1").innerHTML = "";
-      button1_value = 0;
+        document.getElementById("answer1").innerHTML = "";
+        document.getElementById("answer2").innerHTML = "";
+        document.getElementById("answer3a").innerHTML = "";
+        document.getElementById("answer3b").innerHTML = "";
+        document.getElementById("answer4b").innerHTML = "";
+        document.getElementById("answer4c").innerHTML = "";
+        clicked = 0;
+        button1_value = 0;
+        button2_value = 0;
+        button3a_value = 0;
+        button3b_value = 0;
+        button4b_value = 0;
+        button4c_value = 0;
     }
 }
-function button2_onclick(){
-    if(button1_value == 0 ) {
-      document.getElementById("answer2").innerHTML = answer_2;
-      button1_value = 1;
+function button1_onclick() {
+    if (button1_value == 0) {
+        document.getElementById("answer1").innerHTML = answer_1;
+        button1_value = 1;
     } else {
-      document.getElementById("answer2").innerHTML = "";
-      button1_value = 0;
+        document.getElementById("answer1").innerHTML = "";
+        button1_value = 0;
     }
 }
-function button3a_onclick(){
-    if(button1_value == 0 ) {
-      document.getElementById("answer3a").innerHTML = answer_3a;
-      button1_value = 1;
+function button2_onclick() {
+    if (button2_value == 0) {
+        document.getElementById("answer2").innerHTML = answer_2;
+        button2_value = 1;
     } else {
-      document.getElementById("answer3a").innerHTML = "";
-      button1_value = 0;
+        document.getElementById("answer2").innerHTML = "";
+        button2_value = 0;
     }
 }
-function button3b_onclick(){
-    if(button1_value == 0 ) {
-      document.getElementById("answer3b").innerHTML = answer_3b;
-      button1_value = 1;
+function button3a_onclick() {
+    if (button3a_value == 0) {
+        document.getElementById("answer3a").innerHTML = answer_3a;
+        button3a_value = 1;
     } else {
-      document.getElementById("answer3b").innerHTML = "";
-      button1_value = 0;
+        document.getElementById("answer3a").innerHTML = "";
+        button3a_value = 0;
     }
 }
-function button4b_onclick(){
-    if(button1_value == 0 ) {
-      document.getElementById("answer4b").innerHTML = answer_4b;
-      button1_value = 1;
+function button3b_onclick() {
+    if (button3b_value == 0) {
+        document.getElementById("answer3b").innerHTML = answer_3b;
+        button3b_value = 1;
     } else {
-      document.getElementById("answer4b").innerHTML = "";
-      button1_value = 0;
+        document.getElementById("answer3b").innerHTML = "";
+        button3b_value = 0;
     }
 }
-function button4c_onclick(){
-    if(button1_value == 0 ) {
-      document.getElementById("answer4c").innerHTML = answer_4c;
-      button1_value = 1;
+function button4b_onclick() {
+    if (button4b_value == 0) {
+        document.getElementById("answer4b").innerHTML = answer_4b;
+        button4b_value = 1;
     } else {
-      document.getElementById("answer4c").innerHTML = "";
-      button1_value = 0;
+        document.getElementById("answer4b").innerHTML = "";
+        button4b_value = 0;
+    }
+}
+function button4c_onclick() {
+    if (button4c_value == 0) {
+        document.getElementById("answer4c").innerHTML = answer_4c;
+        button4c_value = 1;
+    } else {
+        document.getElementById("answer4c").innerHTML = "";
+        button4c_value = 0;
     }
 }

@@ -158,3 +158,13 @@ img {
       display: none;
   }
 }
+.homepage_link{
+  color: #27f85c;
+  font-size: large;
+}
+
+.sub_question{
+  margin-left: 1%;
+  display:inline;
+  font-size: medium;
+}

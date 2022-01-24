@@ -167,7 +167,7 @@ function number_line() {
     var low = {
         y: [''],
         x: [20], //Added to 30, so 30-50 range
-        name: 'Low',
+        name: 'Acceptably Low',
         type: 'bar',
         orientation: "h",
         marker: {
@@ -190,8 +190,8 @@ function number_line() {
 
     var high = {
         y: [''],
-        x: [200], //Added to 200, so 200-400 range
-        name: 'High',
+        x: [100], //Added to 200, so 200-300 range
+        name: 'Acceptably High',
         type: 'bar',
         orientation: "h",
         marker: {
@@ -202,14 +202,15 @@ function number_line() {
 
     var too_high = {
         y: [''],
-        x: [200], //Added to 400, so 400-600 range
+        x: [100], //Added to 300, so 300-400 range
         name: 'Too High',
         type: 'bar',
         orientation: "h",
         marker: {
             color: 'rgb(255,0,0)',
             width: [0.1]
-        }
+        },
+        hoverinfo: 'name'
     };
 
     var data = [orig, updated, too_low, low, ideal, high, too_high];
@@ -236,7 +237,7 @@ function number_line() {
         }
     };
 
-    Plotly.newPlot('visualizer', data, layout, { scrollZoom: true });
+    Plotly.newPlot('visualizer', data, layout, { scrollZoom: true});
 }
 
 // Question/Answer Buttons

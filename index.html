@@ -4,34 +4,91 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Science Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Metagenomic Tutorials</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/homepage_styles.css">
 </head>
 
-<body>
+<body class="home-page">
     <header>
-        <a class="logo" href="index.html">Science Tools</a>
+        <a class="logo" href="science_tools.index.html">Avril's Project Portfolio</a>
         <nav class="nav__links">
             <ul>
-                <li><a href="https://github.com/armetcal/armetcal.github.io">GitHub</a></li>
+                <li><a href="https://github.com/armetcal/armetcal.github.io">
+                    <i class="fa fa-github" aria-hidden="true"></i> GitHub
+                </a></li>
             </ul>
         </nav>
     </header>
-    <h3 class="logo" style='padding: 0.5% 5%;color:#1fce4b;'>UBC Biology</h3>
-    <a class="logo2" style='padding: 0.5% 5%;color:rgb(250, 242, 232);'
-        href="BIOL_112/index.html">BIOL 112: Transcription & Translation</a><br />
-    <a class="logo2" style='padding: 0.5% 5%;color:rgb(250, 242, 232);'
-        href="MICB_353/index.html">MICB 353: Dilution Practice</a>
+
+    <main class="home-main">
+        <div class="home-cards">
+            <section class="home-about">
+                <h2 class="home-about-title">About</h2>
+                <p class="home-about-text">This is a repository of completed coding projects that are peripheral or unrelated to my research.</p>
+                <p class="home-about-text">Projects are organized by category: Code manuals (Documentation), RShiny apps, phone apps (Kotlin), 
+                    and learning tools (HTML & Javascript).</p>
+            </section>
+
+            <article class="home-card">
+                <h2 class="home-card-title">Code Manuals</h2>
+                <div class="image-grid">
+                    <a href="https://armetcal.github.io/Bioinformatic-Tool-Wikipedia/" data-title="Metagenomics (2025)">
+                        <img id="manual" src="images/24.png" alt="Metagenomics (2025)" />
+                    </a>
+                </div>
+            </article>
+
+            <article class="home-card">
+                <h2 class="home-card-title">RShiny Apps for Data Exploration</h2>
+                <div class="image-grid">
+                    <a href="https://github.com/armetcal/Meal_Tracker" data-title="Functional Data Explorer (2023)">
+                        <img id="data_explorer" src="images/29.png" alt="Functional Data Explorer (2023)" />
+                    </a>
+                    <a href="https://github.com/armetcal/Meal_Tracker" data-title="Flow Cytometry (2022)">
+                        <img id="flow" src="images/30.png" alt="Flow Cytometry (2022)" />
+                    </a>
+                </div>
+            </article>
+
+            <article class="home-card">
+                <h2 class="home-card-title">Phone Apps</h2>
+                <div class="image-grid">
+                    <a href="https://github.com/armetcal/Meal_Tracker" data-title="Diet Tracker (2025)">
+                        <img id="diet" src="images/31.png" alt="Diet Tracker (2025)" />
+                    </a>
+                    <a href="https://github.com/armetcal/Meal_Tracker" data-title="PolyLingo (2026)">
+                        <img id="languages" src="images/32.png" alt="PolyLingo (2026)" />
+                    </a>
+                </div>
+            </article>
+
+            <article class="home-card">
+                <h2 class="home-card-title">Learning Tools</h2>
+                <div class="image-grid">
+                    <a href="https://armetcal.github.io/cell_growth_simulator/" data-title="Growth Curves (2026)">
+                        <img id="growth_curves" src="images/28.png" alt="Growth Curves (2026)" />
+                    </a>
+                    <a href="https://armetcal.github.io/BIOL_112/" data-title="Transcription & Translation (2021)">
+                        <img id="biol112" src="images/25.png" alt="Transcription & Translation (2021)" />
+                    </a>
+                    <a href="https://armetcal.github.io/MICB_353/" data-title="Dilution Practice (2022)">
+                        <img id="micb353" src="images/26.png" alt="Dilution Practice (2022)" />
+                    </a>
+                    <a href="https://armetcal.github.io/1000_words/" data-title="Accessible Writing (2022)">
+                        <img id="1000_words" src="images/27.png" alt="Accessible Writing (2022)" />
+                    </a>
+                </div>
+            </article>
+        </div>
+    </main>
+
     <br />
-    <h3 class="logo" style='padding: 0.5% 5%;color:#1fce4b;'>Misc. Tools</h3>
-    <a class="logo2" style='padding: 0.5% 5%;color:rgb(250, 242, 232);'
-        href="1000_words/index.html">1000 Words: How accessible is your writing?</a>
-    <br />
-    <h3 class="logo" style='padding: 0.5% 5%;color:#1fce4b;'>Useful Links</h3>
+    <!-- <h3 class="logo" style='padding: 0.5% 5%;color:#1fce4b;'>Useful Links</h3>
     <a class="logo2" style='padding: 0.5% 5%;color:rgb(250, 242, 232);' href="https://sci-hub.ru/">Sci-Hub: Free academic
         paper access</a><br />
     <a class="logo2" style='padding: 0.5% 5%;color:rgb(250, 242, 232);' href="https://search.library.ubc.ca/">UBC
@@ -62,26 +119,73 @@
         href="https://youtu.be/zQo_S3yNa2w">Hyperbolica</a><br />
     <a class="logo2" style='padding: 0.5% 5%;color:rgb(250, 242, 232);' href="https://youtu.be/ovJcsL7vyrk">Chaos Theory
         and the Mandelbrot Set</a>
-    <br />
+    <br /> -->
+    <footer class="home-footer site-footer">
+        <div class="home-footer-inner">
+            <hr class="home-footer-hr" />
+            <p>Developed by Avril Metcalfe-Roach</p>
+            <p>Contact: <a href="mailto:avril.metcalfe-roach@ubc.ca">avril.metcalfe-roach@ubc.ca</a></p>
+            <p>Updated: 20 May 2026</p>
+        </div>
+    </footer>
+
+    <script>
+    // make category titles toggle their image grid; add keyboard support and aria
+    (function(){
+      document.querySelectorAll('.home-card').forEach(function(card){
+        var title = card.querySelector('.home-card-title');
+        if(!title) return;
+        // add chevron
+        var chev = document.createElement('span');
+        chev.className = 'chev';
+        chev.textContent = '▾';
+        title.appendChild(chev);
+
+        // make title keyboard-focusable and accessible
+        title.setAttribute('role','button');
+        title.setAttribute('tabindex','0');
+        title.setAttribute('aria-expanded', 'true');
+
+        function collapseSet(expand){
+          if(expand){
+            card.classList.remove('collapsed');
+            title.setAttribute('aria-expanded', 'true');
+            // set max-height to scrollHeight for smooth expand
+            var grid = card.querySelector('.image-grid');
+            if(grid){
+              grid.style.maxHeight = grid.scrollHeight + 'px';
+            }
+          } else {
+            var grid = card.querySelector('.image-grid');
+            if(grid) grid.style.maxHeight = '0px';
+            card.classList.add('collapsed');
+            title.setAttribute('aria-expanded', 'false');
+          }
+        }
+
+        // initialize expanded maxHeight so transition works
+        var grid = card.querySelector('.image-grid');
+        if(grid){
+          grid.style.maxHeight = grid.scrollHeight + 'px';
+        }
+
+        title.addEventListener('click', function(){
+          var expanded = title.getAttribute('aria-expanded') === 'true';
+          collapseSet(!expanded);
+          // if expanding, remove inline maxHeight after transition so it can grow naturally later
+          if(!expanded){
+            setTimeout(function(){ if(grid) grid.style.maxHeight = ''; }, 310);
+          }
+        });
+
+        title.addEventListener('keydown', function(e){
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            title.click();
+          }
+        });
+      });
+    })();
+    </script>
 </body>
-<footer class="site-footer">
-    <div style='clear: both; max-width: 10000px;'>
-        <hr>
-        <p>
-            <center>
-                Developed by Avril Metcalfe-Roach.
-            </center>
-        </p>
-        <p>
-            <center>
-                Contact email: armetcal@msl.ubc.ca
-            </center>
-        </p>
-        <p>
-            <center>
-                Updated: 6 January 2022
-            </center>
-        </p>
-    </div>
-</footer>
 </html>

@@ -4,4 +4,4 @@ This is a repository of completed coding projects that are peripheral or unrelat
 
 Projects are organized by category: Code manuals (Documentation), RShiny apps, phone apps (Kotlin), and learning tools (HTML & Javascript).
 
-## [Check out the website here!](https://armetcal.github.io/)
+## [This is meant to be viewed as a website - check it out here!](https://armetcal.github.io/)
